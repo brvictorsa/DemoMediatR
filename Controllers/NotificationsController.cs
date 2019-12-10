@@ -1,8 +1,7 @@
-using System.Collections.Generic;
 using DemoMediatR.Service;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DemoMediatR.Controllers 
+namespace DemoMediatR.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
@@ -16,8 +15,7 @@ namespace DemoMediatR.Controllers
     }
 
     [HttpGet]
-    [Route("/notifications")]
-    public ActionResult<string> NotifyAll() 
+    public ActionResult<string> Get() 
     {
         _notifierMediatorService.Notifiy("This is a simple message notification");
         return Ok("Completed");
